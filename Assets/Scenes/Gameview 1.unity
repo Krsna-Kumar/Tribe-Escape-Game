@@ -2622,12 +2622,12 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 1383481528}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: -1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -4954,7 +4954,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 438146232}
     - target: {fileID: 6387183566051361834, guid: 65ae2b71f0a40d54499e11538e2f581d,
         type: 3}
       propertyPath: joystick
@@ -4962,9 +4962,19 @@ PrefabInstance:
       objectReference: {fileID: 890192252}
     - target: {fileID: 6387183566051361834, guid: 65ae2b71f0a40d54499e11538e2f581d,
         type: 3}
+      propertyPath: HealthLook
+      value: 
+      objectReference: {fileID: 696689690}
+    - target: {fileID: 6387183566051361834, guid: 65ae2b71f0a40d54499e11538e2f581d,
+        type: 3}
       propertyPath: playerDrop
       value: 
       objectReference: {fileID: 1584732476}
+    - target: {fileID: 6387183566051361834, guid: 65ae2b71f0a40d54499e11538e2f581d,
+        type: 3}
+      propertyPath: healthBarSprite
+      value: 
+      objectReference: {fileID: 1540777096}
     - target: {fileID: 6387183566051361839, guid: 65ae2b71f0a40d54499e11538e2f581d,
         type: 3}
       propertyPath: m_RootOrder
