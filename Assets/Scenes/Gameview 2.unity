@@ -112,7 +112,7 @@ NavMeshSettings:
     agentClimb: 0.26
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    minRegionArea: 2
+    minRegionArea: 0
     manualCellSize: 0
     cellSize: 0.16666667
     manualTileSize: 0
@@ -1222,7 +1222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424113646}
   m_LocalRotation: {x: -0, y: -0.2588189, z: -0, w: 0.9659259}
-  m_LocalPosition: {x: 28.420887, y: 0, z: -55.19202}
+  m_LocalPosition: {x: 38.05, y: 0, z: -49.63}
   m_LocalScale: {x: 0.65102, y: 1, z: 4.302462}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6253,7 +6253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupPoint: {fileID: 1294077743}
   sphereOrigin: {fileID: 4490927721068841728}
-  sphereRadius: 0.2
+  sphereRadius: 0.5
   layerMask:
     serializedVersion: 2
     m_Bits: 512

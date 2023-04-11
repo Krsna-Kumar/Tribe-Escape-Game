@@ -119,7 +119,7 @@ public class TribalAI : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 0.1f)
             walkPointSet = false;
     }
 
