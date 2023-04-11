@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefabs:
   - {fileID: 5378452610175566473, guid: a034093951f6877408e3cd2f525164cc, type: 3}
-  numberToSpawn: 5
+  numberToSpawn: 3
   maxPosX: 15
   minPosX: -15
   maxPosZ: 10
@@ -5292,7 +5292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefabs:
   - {fileID: 5378452610175566473, guid: a034093951f6877408e3cd2f525164cc, type: 3}
-  numberToSpawn: 5
+  numberToSpawn: 3
   maxPosX: 15
   minPosX: -15
   maxPosZ: 10

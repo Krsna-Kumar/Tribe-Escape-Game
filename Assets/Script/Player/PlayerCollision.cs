@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerCollision : MonoBehaviour
     public Material desireColor;
 
     public PlayerDrop playerDrop;
+
+    public GameManager gameManager;
 
     private bool isHitted;
 
@@ -67,6 +70,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("You're in Safe zone");
             isSafe = true;
+            StartCoroutine(MissionPassed(1f));
         }
     }
 
@@ -97,5 +101,11 @@ public class PlayerCollision : MonoBehaviour
         playerMr.material = originalColor;
     }
 
-    #endregion Tracking Health
+    IEnumerator MissionPassed(float _delay)
+    {
+        yield return new WaitForSeconds(_delay);
+        gameManager.LoadNextLevel();
+    }
+
+    #endregion 
 }

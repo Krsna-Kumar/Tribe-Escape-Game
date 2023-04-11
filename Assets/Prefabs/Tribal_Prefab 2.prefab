@@ -176,7 +176,7 @@ MonoBehaviour:
   directionArrow: {fileID: 899809214690168604}
   handPos: {fileID: 411384745198395000}
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointRange: 7
   timeBtwAttacks: 0.8
   sightRange: 15
   attackRange: 7
