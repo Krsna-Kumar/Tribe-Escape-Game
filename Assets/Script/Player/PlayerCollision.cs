@@ -33,6 +33,8 @@ public class PlayerCollision : MonoBehaviour
 
         // Blood Red material
         originalColor = playerMr.material;
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
