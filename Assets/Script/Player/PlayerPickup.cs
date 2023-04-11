@@ -119,7 +119,7 @@ public class PlayerPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Crop"))
+        if (other.gameObject.CompareTag("Drop"))
         {
             playerMove.holdStrength = 0;
 

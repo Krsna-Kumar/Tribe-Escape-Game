@@ -4795,7 +4795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a358405ad56cf4db410d59cd91e5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredLog: 5
+  requiredLog: 3
   boatPrefab: {fileID: 1204174863}
   realPlayer: {fileID: 1488802136775735390}
   boatSeat: {fileID: 1657644305}

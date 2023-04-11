@@ -89,7 +89,7 @@ MonoBehaviour:
     m_Bits: 128
   stonePrefab: {fileID: 8991934196462338329, guid: 5b6e3d5a8ea5ef34891937a988eba49c,
     type: 3}
-  stoneThrowSpeed: 40
+  stoneThrowSpeed: 100
   directionArrow: {fileID: 2644950632841062006}
   handPos: {fileID: 411384745198395000}
   walkPoint: {x: 0, y: 0, z: 0}
