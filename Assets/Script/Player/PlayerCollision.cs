@@ -72,7 +72,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("You're in Safe zone");
             isSafe = true;
-            StartCoroutine(MissionPassed(1f));
+            MissionPassed();
         }
     }
 
@@ -103,10 +103,9 @@ public class PlayerCollision : MonoBehaviour
         playerMr.material = originalColor;
     }
 
-    IEnumerator MissionPassed(float _delay)
+    void MissionPassed()
     {
-        yield return new WaitForSeconds(_delay);
-        sceneManager.LoadNextLevel();
+        sceneManager.LoadScene();
     }
 
     #endregion 

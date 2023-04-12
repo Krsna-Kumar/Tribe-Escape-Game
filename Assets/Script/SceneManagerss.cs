@@ -4,9 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerss : MonoBehaviour
 {
+    public Animator transitionAnim;
+
     public GameObject failedPanel;
 
     private  PlayerHealth playerHealth;
+
+    [Space]
+    public string nextSceneName;
 
 
     private void Start()
@@ -29,9 +34,10 @@ public class SceneManagerss : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void LoadNextLevel()
+    public IEnumerator LoadScene()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(nextSceneName);
     }
 }
