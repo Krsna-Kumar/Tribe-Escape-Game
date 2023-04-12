@@ -16,7 +16,7 @@ public class PlayerCollision : MonoBehaviour
 
     public PlayerDrop playerDrop;
 
-    public GameManager gameManager;
+    public SceneManagerss sceneManager;
 
     private bool isHitted;
 
@@ -34,7 +34,7 @@ public class PlayerCollision : MonoBehaviour
         // Blood Red material
         originalColor = playerMr.material;
 
-        gameManager = FindObjectOfType<GameManager>();
+        sceneManager = FindObjectOfType<SceneManagerss>();
     }
 
     private void Update()
@@ -106,7 +106,7 @@ public class PlayerCollision : MonoBehaviour
     IEnumerator MissionPassed(float _delay)
     {
         yield return new WaitForSeconds(_delay);
-        gameManager.LoadNextLevel();
+        sceneManager.LoadNextLevel();
     }
 
     #endregion 
