@@ -105,7 +105,7 @@ public class PlayerCollision : MonoBehaviour
 
     void MissionPassed()
     {
-        sceneManager.LoadScene();
+        StartCoroutine(sceneManager.LoadScene());
     }
 
     #endregion 

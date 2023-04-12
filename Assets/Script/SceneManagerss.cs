@@ -31,6 +31,7 @@ public class SceneManagerss : MonoBehaviour
 
     public void RestartGame()
     {
+        transitionAnim.SetTrigger("End");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
