@@ -22,7 +22,14 @@ public class PlayerMove : MonoBehaviour
 
     private PlayerDrop playerDrop;
 
+    private PlayerGround playerGround;
+
     public GameObject boatPaddle;
+
+    [SerializeField]
+    private Collider staticObjects;
+
+    private bool isGrounded;
 
     [HideInInspector]
     public bool pickedLost;
@@ -43,6 +50,7 @@ public class PlayerMove : MonoBehaviour
         player_rb = GetComponent<Rigidbody>();
         playerPickup = GetComponent<PlayerPickup>();
         playerDrop = FindObjectOfType<PlayerDrop>();
+        playerGround = GetComponentInChildren<PlayerGround>();
         boatPaddle.SetActive(false);
     }
 
@@ -58,6 +66,7 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         HandleMovement();
+        
         HandleBoat();
     }
 
@@ -68,6 +77,7 @@ public class PlayerMove : MonoBehaviour
             horizonrtalInput = joystick.Horizontal;
             verticalInput = joystick.Vertical;
 
+       
             player_rb.velocity = new Vector3(joystick.Horizontal * moveSpeed, player_rb.velocity.y,
                 joystick.Vertical * moveSpeed);
 
@@ -106,11 +116,21 @@ public class PlayerMove : MonoBehaviour
         {
             holdStrength = 2;
         }
-
-
-
-
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other == staticObjects)
+        {
+            isGrounded = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other == staticObjects)
+        {
+            isGrounded = false;
+        }
+    }
     #endregion 
 }
