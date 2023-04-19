@@ -1527,7 +1527,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3450,7 +3450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1382801095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3561,7 +3561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 0
+  m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -3766,6 +3766,11 @@ PrefabInstance:
       objectReference: {fileID: 731209847}
     - target: {fileID: 1868593572645641758, guid: 0191ce183621d00438e799f2b26fde60,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868593572645641758, guid: 0191ce183621d00438e799f2b26fde60,
+        type: 3}
       propertyPath: missionText
       value: 
       objectReference: {fileID: 1046881598}
@@ -3773,6 +3778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sphereRadius
       value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868593572645641759, guid: 0191ce183621d00438e799f2b26fde60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1987765111825049880, guid: 0191ce183621d00438e799f2b26fde60,
         type: 3}
@@ -3791,6 +3801,11 @@ PrefabInstance:
       objectReference: {fileID: 1540777098}
     - target: {fileID: 3561861897879837252, guid: 0191ce183621d00438e799f2b26fde60,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3561861897879837252, guid: 0191ce183621d00438e799f2b26fde60,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: -90.57
       objectReference: {fileID: 0}
@@ -3799,6 +3814,11 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 890192252}
+    - target: {fileID: 3561861897879837253, guid: 0191ce183621d00438e799f2b26fde60,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4272454710564005543, guid: 0191ce183621d00438e799f2b26fde60,
         type: 3}
       propertyPath: playerDrop
@@ -4150,7 +4170,7 @@ Transform:
   - {fileID: 1383481529}
   - {fileID: 166703257}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1584732474
 GameObject:
@@ -5267,6 +5287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387183566051361843, guid: 65ae2b71f0a40d54499e11538e2f581d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6387183566639309101, guid: 65ae2b71f0a40d54499e11538e2f581d,
         type: 3}
