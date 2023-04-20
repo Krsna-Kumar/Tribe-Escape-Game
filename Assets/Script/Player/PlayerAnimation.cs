@@ -41,15 +41,15 @@ public class PlayerAnimation : MonoBehaviour
         playerAnim.SetBool("onBoat", playerDrop.onBoat);
 
         //holding
-        /*if (playerStack.isStacking)
+        if (playerStack.isStacking)
         {
             playerAnim.SetLayerWeight(holdLayerIndex, targetLayerValue);
         }
         else
         {
             playerAnim.SetLayerWeight(holdLayerIndex, 0);
-        }*/
-        
+        }
+        /*
         if (playerPickup.isHolding)
         {
             playerAnim.SetLayerWeight(holdLayerIndex, targetLayerValue);
@@ -57,7 +57,7 @@ public class PlayerAnimation : MonoBehaviour
         else
         {
             playerAnim.SetLayerWeight(holdLayerIndex, 0);
-        }
+        }*/
     }
 
     #endregion
