@@ -14,7 +14,7 @@ public class PlayerStack : MonoBehaviour
     [HideInInspector]
     public bool isStacking;
 
-    private List<GameObject> collectedObjects = new List<GameObject>(); // List of collected objects
+    public List<GameObject> collectedObjects = new List<GameObject>(); // List of collected objects
 
     private void Start()
     {
@@ -31,7 +31,6 @@ public class PlayerStack : MonoBehaviour
             if ((collectableLayer.value & (1 << collider.gameObject.layer)) == 0) continue; // Skip objects that are not on the collectable layer
             if (currentStackCount >= maxStackCount) break; // Skip objects if we have reached the maximum stack count
             CollectObject(collider.gameObject);
-            currentStackCount++;
         }
 
         if (collectedObjects.Count > 0)
@@ -59,7 +58,7 @@ public class PlayerStack : MonoBehaviour
             Rigidbody rigidbody = topObject.GetComponent<Rigidbody>();
             if (rigidbody != null) rigidbody.isKinematic = false;
 
-            Destroy(topObject, 1f);
+            playerMove.holdStrength = 5;
         }
     }
 
@@ -80,11 +79,16 @@ public class PlayerStack : MonoBehaviour
         }
     }
 
+    // ************ COLLECT OBJECTS ************
     private void CollectObject(GameObject obj)
     {
-        if(playerMove.holdStrength >= 0)
+        if(playerMove.holdStrength > -1)
         {
-            collectedObjects.Add(obj);
+            // Check if the object is already in the list
+            if (!collectedObjects.Contains(obj))
+            {
+                collectedObjects.Add(obj);
+            }
 
             // Make object a child of player's hand
             obj.transform.parent = handTransform;
@@ -100,10 +104,12 @@ public class PlayerStack : MonoBehaviour
             Rigidbody rigidbody = obj.GetComponent<Rigidbody>();
             if (rigidbody != null) rigidbody.isKinematic = true;
         }
+
         else
         {
             return;
         }
+    
     }
 
     private void OnTriggerEnter(Collider other)
@@ -111,6 +117,7 @@ public class PlayerStack : MonoBehaviour
         if (other.gameObject.CompareTag("Drop"))
         {
             print("Into Drop");
+            //Do Something in Drop Area -- Deploy Objects here....
         }
     }
 }
