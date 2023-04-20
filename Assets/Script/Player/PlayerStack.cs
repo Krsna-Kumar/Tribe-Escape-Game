@@ -58,6 +58,8 @@ public class PlayerStack : MonoBehaviour
 
             Rigidbody rigidbody = topObject.GetComponent<Rigidbody>();
             if (rigidbody != null) rigidbody.isKinematic = false;
+
+            Destroy(topObject, 1f);
         }
     }
 
