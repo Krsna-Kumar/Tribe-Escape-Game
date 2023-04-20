@@ -116,8 +116,23 @@ public class PlayerStack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Drop"))
         {
-            print("Into Drop");
-            //Do Something in Drop Area -- Deploy Objects here....
+            // Loop through all the collected objects and drop them
+            foreach (GameObject obj in collectedObjects)
+            {
+               obj.transform.parent = null; // Unparent the object
+            obj.SetActive(true); // Enable the object
+            Collider collider = obj.GetComponent<Collider>();
+            if (collider != null) collider.enabled = true; // Enable the collider
+            Rigidbody rigidbody = obj.GetComponent<Rigidbody>();
+            if (rigidbody != null) rigidbody.isKinematic = false; // Disable kinematic
+            rigidbody.AddForce(transform.forward * 10f, ForceMode.Impulse); // Add a force to the object to simulate dropping
+            }
+
+            // Clear the collected objects list
+            collectedObjects.Clear();
+
+            // Reset the current stack count
+            currentStackCount = 0;
         }
     }
 }

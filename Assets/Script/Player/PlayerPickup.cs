@@ -121,7 +121,7 @@ public class PlayerPickup : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Drop"))
         {
-            playerMove.holdStrength = 0;
+           // playerMove.holdStrength = 0;
 
             // missionText.SetActive(true);
         }
