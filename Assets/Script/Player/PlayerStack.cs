@@ -14,7 +14,7 @@ public class PlayerStack : MonoBehaviour
     [HideInInspector]
     public bool isStacking;
 
-    public List<GameObject> collectedObjects = new List<GameObject>(); // List of collected objects
+    private List<GameObject> collectedObjects = new List<GameObject>(); // List of collected objects
 
     private void Start()
     {
@@ -58,7 +58,7 @@ public class PlayerStack : MonoBehaviour
             Rigidbody rigidbody = topObject.GetComponent<Rigidbody>();
             if (rigidbody != null) rigidbody.isKinematic = false;
 
-            playerMove.holdStrength = 5;
+            playerMove.holdStrength = 2;
         }
     }
 
@@ -82,7 +82,7 @@ public class PlayerStack : MonoBehaviour
     // ************ COLLECT OBJECTS ************
     private void CollectObject(GameObject obj)
     {
-        if(playerMove.holdStrength > -1)
+        if(playerMove.holdStrength > 0)
         {
             // Check if the object is already in the list
             if (!collectedObjects.Contains(obj))

@@ -155,9 +155,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3561861897879837252}
   - component: {fileID: 3561861897879837253}
-  - component: {fileID: 1868593572645641758}
   - component: {fileID: 4272454710564005543}
   - component: {fileID: 1868593572645641759}
+  - component: {fileID: 1868593572645641758}
   - component: {fileID: 2722161137749341161}
   - component: {fileID: 2722161137749341163}
   m_Layer: 7
@@ -206,30 +206,9 @@ MonoBehaviour:
     m_Bits: 64
   holdStrength: 2
   boatPaddle: {fileID: 2956163387891449273}
+  staticObjects: {fileID: 0}
   pickedLost: 0
   isRunning: 0
---- !u!114 &1868593572645641758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3561861897879837254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c91b3aa6e953ef4aacd7fb1e9980f79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupPoint: {fileID: 2722161137404505399}
-  sphereOrigin: {fileID: 1987765111825049880}
-  sphereRadius: 0.5
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  maxHoldStrength: 5
-  theArrow: {fileID: 0}
-  isHolding: 0
-  missionText: {fileID: 0}
 --- !u!114 &4272454710564005543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +226,7 @@ MonoBehaviour:
   playerMr: {fileID: 5694852948623164470}
   desireColor: {fileID: 2100000, guid: 4383146e26e54b14590bbcbddbd6eb5b, type: 2}
   playerDrop: {fileID: 0}
+  sceneManager: {fileID: 0}
   isSafe: 0
 --- !u!114 &1868593572645641759
 MonoBehaviour:
@@ -255,19 +235,41 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3561861897879837254}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c168d131f3571a46aa6bb4ccb57022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTransform: {fileID: 2722161136459467260}
+  handTransform: {fileID: 2722161137404505399}
   maxDistance: 1.5
   collectingSpeed: 10
   collectableLayer:
     serializedVersion: 2
     m_Bits: 512
-  maxStackCount: 7
+  maxStackCount: 3
   isStacking: 0
+--- !u!114 &1868593572645641758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561861897879837254}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c91b3aa6e953ef4aacd7fb1e9980f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupPoint: {fileID: 2722161137404505399}
+  sphereOrigin: {fileID: 1987765111825049880}
+  sphereRadius: 0.3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  maxHoldStrength: 5
+  theArrow: {fileID: 0}
+  isHolding: 0
+  missionText: {fileID: 0}
 --- !u!136 &2722161137749341161
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -322,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6078208159198586348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.22, z: 0.513}
+  m_LocalPosition: {x: 0, y: 0.581, z: 0.513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
