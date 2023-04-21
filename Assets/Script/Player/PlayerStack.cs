@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerStack : MonoBehaviour
 {
     public Transform handTransform; // The transform of the player's hand
-    public Transform dropTransform;
+    public GameObject theArrow;
     public float maxDistance = 1f; // The maximum distance for collecting objects
     public float collectingSpeed = 5f; // The speed at which objects will be collected
     public LayerMask collectableLayer; // The layer of objects that can be collected
@@ -37,10 +37,12 @@ public class PlayerStack : MonoBehaviour
         if (collectedObjects.Count > 0)
         {
             isStacking = true;
+            theArrow.SetActive(true);
         }
         else
         {
             isStacking = false;
+            theArrow.SetActive(false);
         }
 
         // ********   D   R   O   P   *********

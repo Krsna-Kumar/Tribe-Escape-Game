@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameview 1.unity
     guid: 1b476f34bba9f3947bcdc6c6456da08e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Gameview 2.unity
     guid: 0baa727216c73004a89a14f951597956
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Gameview 3.unity
     guid: f1e83b86e4d5bf14aac44e02e633e76d
   m_configObjects: {}

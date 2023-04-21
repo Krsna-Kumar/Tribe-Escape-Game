@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTransform: {fileID: 2722161137404505399}
+  theArrow: {fileID: 0}
   maxDistance: 1.5
   collectingSpeed: 10
   collectableLayer:

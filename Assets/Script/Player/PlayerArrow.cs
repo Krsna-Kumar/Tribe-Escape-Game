@@ -5,11 +5,11 @@ public class PlayerArrow : MonoBehaviour
     public Transform dropTarget;
     public float rotationSpeed;
 
-    public PlayerPickup playerPickup;
+    public PlayerStack playerStack;
 
     private void FixedUpdate()
     {
-        if (playerPickup.isHolding)
+        if (playerStack.isStacking)
         {
             RotateArrow();
         }
@@ -21,7 +21,7 @@ public class PlayerArrow : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = playerPickup.transform.position + new Vector3(0, 7, 0);
+        transform.position = playerStack.transform.position + new Vector3(0, 7, 0);
     }
 
     private void RotateArrow()
