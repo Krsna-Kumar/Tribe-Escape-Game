@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerStack : MonoBehaviour
 {
     public Transform handTransform; // The transform of the player's hand
+    public Transform dropTransform;
     public float maxDistance = 1f; // The maximum distance for collecting objects
     public float collectingSpeed = 5f; // The speed at which objects will be collected
     public LayerMask collectableLayer; // The layer of objects that can be collected
@@ -82,7 +83,7 @@ public class PlayerStack : MonoBehaviour
     // ************ COLLECT OBJECTS ************
     private void CollectObject(GameObject obj)
     {
-        if(playerMove.holdStrength > 0)
+        if (playerMove.holdStrength > 0)
         {
             // Check if the object is already in the list
             if (!collectedObjects.Contains(obj))
@@ -104,35 +105,36 @@ public class PlayerStack : MonoBehaviour
             Rigidbody rigidbody = obj.GetComponent<Rigidbody>();
             if (rigidbody != null) rigidbody.isKinematic = true;
         }
-
         else
         {
             return;
         }
-    
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Drop"))
         {
-            // Loop through all the collected objects and drop them
-            foreach (GameObject obj in collectedObjects)
+            if (collectedObjects.Count > 0)
             {
-               obj.transform.parent = null; // Unparent the object
-            obj.SetActive(true); // Enable the object
-            Collider collider = obj.GetComponent<Collider>();
-            if (collider != null) collider.enabled = true; // Enable the collider
-            Rigidbody rigidbody = obj.GetComponent<Rigidbody>();
-            if (rigidbody != null) rigidbody.isKinematic = false; // Disable kinematic
-            rigidbody.AddForce(transform.forward * 10f, ForceMode.Impulse); // Add a force to the object to simulate dropping
+               
+                foreach (GameObject currentObj in collectedObjects)
+                {
+                    currentObj.transform.parent = null;
+                    currentObj.gameObject.GetComponent<Collider>().enabled = true;
+                    currentObj.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                    currentObj.layer = 0;
+                }
+
+                //Clear all objects from the list of CollectedObjects
+                collectedObjects.Clear();
+
             }
+        }
 
-            // Clear the collected objects list
-            collectedObjects.Clear();
-
-            // Reset the current stack count
-            currentStackCount = 0;
+        else
+        {
+            return;
         }
     }
 }

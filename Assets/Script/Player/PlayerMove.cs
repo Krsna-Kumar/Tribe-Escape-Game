@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -40,11 +38,10 @@ public class PlayerMove : MonoBehaviour
     [HideInInspector]
     public bool isRunning;
 
-
-    #endregion
-
+    #endregion Variables
 
     #region Private Methods
+
     private void Start()
     {
         player_rb = GetComponent<Rigidbody>();
@@ -56,17 +53,18 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        if(holdStrength == 0)
+        if (holdStrength == 0)
         {
             pickedLost = true;
         }
 
         // Debug.Log(holdStrength);
     }
+
     private void FixedUpdate()
     {
         HandleMovement();
-        
+
         HandleBoat();
     }
 
@@ -74,24 +72,24 @@ public class PlayerMove : MonoBehaviour
     {
         if (playerDrop.onBoat) return;
 
-            horizonrtalInput = joystick.Horizontal;
-            verticalInput = joystick.Vertical;
+        horizonrtalInput = joystick.Horizontal;
+        verticalInput = joystick.Vertical;
 
-       
-            player_rb.velocity = new Vector3(joystick.Horizontal * moveSpeed, player_rb.velocity.y,
-                joystick.Vertical * moveSpeed);
+        player_rb.velocity = new Vector3(joystick.Horizontal * moveSpeed, player_rb.velocity.y,
+            joystick.Vertical * moveSpeed);
 
-            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
-            {
-                transform.rotation = Quaternion.LookRotation(player_rb.velocity);
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+        {
+            Quaternion desireRotation = Quaternion.LookRotation(player_rb.velocity);
 
-                isRunning = true;
-            }
-            else
-            {
-                isRunning = false;
-            }
-        
+            transform.rotation = Quaternion.Slerp(transform.rotation, desireRotation, 8 * Time.deltaTime);
+
+            isRunning = true;
+        }
+        else
+        {
+            isRunning = false;
+        }
     }
 
     private void HandleBoat()
@@ -109,7 +107,6 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Hurt"))
         {
             holdStrength -= 1;
-
         }
 
         if (holdStrength <= -1)
@@ -120,17 +117,20 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other == staticObjects)
+        if (other == staticObjects)
         {
             isGrounded = true;
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if(other == staticObjects)
+        if (other == staticObjects)
         {
             isGrounded = false;
         }
     }
-    #endregion 
+
+    #endregion Private Methods
+
 }
